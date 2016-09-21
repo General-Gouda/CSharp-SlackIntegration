@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Net;
+using System.Reflection;
 using System.Text;
 
 //A simple C# class to post messages to a Slack channel
@@ -78,17 +79,72 @@ namespace SlackIntegrations
         public string PreText { get; set; }
     }
 
-    // Class that allows for setting colors that appear within new Slack notifications
-    public class SlackColors
+    public enum SlackColors
     {
-        public string Red { get; set; }
-        public string Yellow { get; set; }
-        public string Green { get; set; }
-        public string LightBlue { get; set; }
-        public string DarkBlue { get; set; }
-        public string Black { get; set; }
-        public string White { get; set; }
-        public string Gray { get; set; }
+        [StringValue("#FF0000")]
+        Red,
+
+        [StringValue("#FFFF00")]
+        Yellow,
+
+        [StringValue("#00FF00")]
+        Green,
+
+        [StringValue("#00FFFF")]
+        LightBlue,
+
+        [StringValue("#0000FF")]
+        DarkBlue,
+
+        [StringValue("#000000")]
+        Black,
+
+        [StringValue("#FFFFFF")]
+        White,
+
+        [StringValue("#CCCCCC")]
+        Gray
+    }
+
+    public class StringValue : System.Attribute
+    {
+        private readonly string _value;
+
+        public StringValue(string value)
+        {
+            _value = value;
+        }
+
+        public string Value
+        {
+            get { return _value; }
+        }
+    }
+
+    public static class StringEnum
+    {
+        public static string GetStringValue(Enum value)
+        {
+            string output = null;
+            Type type = value.GetType();
+
+            //Check first in our cached results...
+
+            //Look for our 'StringValueAttribute' 
+
+            //in the field's custom attributes
+
+            FieldInfo fi = type.GetField(value.ToString());
+            StringValue[] attrs =
+               fi.GetCustomAttributes(typeof(StringValue),
+                                       false) as StringValue[];
+            if (attrs.Length > 0)
+            {
+                output = attrs[0].Value;
+            }
+
+            return output;
+        }
     }
 }
 
