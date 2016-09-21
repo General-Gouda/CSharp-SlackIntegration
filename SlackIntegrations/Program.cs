@@ -19,7 +19,7 @@ namespace SlackIntegrations
             client.PostMessage(
                 username: "Boaty McBoaterson",
                 text: dateTime + "\nThis is a test message generated in C#!",
-                color: StringEnum.GetStringValue(SlackColors.Red),
+                color: SlackColors.slackColors(SlackColors.colors.Red),
                 pretext: "Testing!"
             );
         }

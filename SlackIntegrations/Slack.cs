@@ -79,71 +79,58 @@ namespace SlackIntegrations
         public string PreText { get; set; }
     }
 
-    public enum SlackColors
+    public static class SlackColors
     {
-        [StringValue("#FF0000")]
-        Red,
-
-        [StringValue("#FFFF00")]
-        Yellow,
-
-        [StringValue("#00FF00")]
-        Green,
-
-        [StringValue("#00FFFF")]
-        LightBlue,
-
-        [StringValue("#0000FF")]
-        DarkBlue,
-
-        [StringValue("#000000")]
-        Black,
-
-        [StringValue("#FFFFFF")]
-        White,
-
-        [StringValue("#CCCCCC")]
-        Gray
-    }
-
-    public class StringValue : System.Attribute
-    {
-        private readonly string _value;
-
-        public StringValue(string value)
+        public enum colors
         {
-            _value = value;
+            Red,
+            Yellow,
+            Green,
+            LightBlue,
+            DarkBlue,
+            Black,
+            White,
+            Gray,
+            DarkGray
         }
 
-        public string Value
-        {
-            get { return _value; }
-        }
-    }
-
-    public static class StringEnum
-    {
-        public static string GetStringValue(Enum value)
+        public static string slackColors (colors color)
         {
             string output = null;
-            Type type = value.GetType();
 
-            //Check first in our cached results...
-
-            //Look for our 'StringValueAttribute' 
-
-            //in the field's custom attributes
-
-            FieldInfo fi = type.GetField(value.ToString());
-            StringValue[] attrs =
-               fi.GetCustomAttributes(typeof(StringValue),
-                                       false) as StringValue[];
-            if (attrs.Length > 0)
+            switch (color)
             {
-                output = attrs[0].Value;
+                case colors.Red:
+                    output = "#FF0000";
+                    return output;
+                case colors.Yellow:
+                    output = "#FFFF00";
+                    return output;
+                case colors.Green:
+                    output = "#00FF00";
+                    return output;
+                case colors.LightBlue:
+                    output = "#00FFFF";
+                    return output;
+                case colors.DarkBlue:
+                    output = "#0000FF";
+                    return output;
+                case colors.Black:
+                    output = "#000000";
+                    return output;
+                case colors.White:
+                    output = "#FFFFFF";
+                    return output;
+                case colors.Gray:
+                    output = "#CCCCCC";
+                    return output;
+                case colors.DarkGray:
+                    output = "#808080";
+                    return output;
+                default:
+                    output = null;
+                    return output;
             }
-
-            return output;
         }
     }
 }
