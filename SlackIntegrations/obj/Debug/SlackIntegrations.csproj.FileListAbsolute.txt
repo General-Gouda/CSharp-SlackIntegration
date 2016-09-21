@@ -1,0 +1,1 @@
+C:\Github\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\SlackIntegrations.exe.config
