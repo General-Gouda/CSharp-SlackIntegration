@@ -9,6 +9,8 @@ This project adds those feature sets.
 Requirements:
 Newtonsoft.json package from NuGet. The package is already installed in the project here.
 
-The Slack.cs includes the code used to create a JSON payload that will be uploaded to the Slack API. 
+The Slack.cs includes the code used to create a JSON payload that will be uploaded to the Slack API. A class with some included colors was also input into this file. These are Web Hex Color values for reference. 
 
-The Program.cs is a example console program that will send the JSON payload to Slack. A Slack Incoming Webhook is required. A class with some included colors was also input into this file. These are Web Hex Color values for reference. I'm hoping to find a way to move the color class into the Slack.cs code at some point. 
+The Program.cs is a example console program that will send the JSON payload to Slack. 
+
+A Slack Incoming Webhook is required from Slack API to send to a Slack channel. 
