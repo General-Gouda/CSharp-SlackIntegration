@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Specialized;
 using System.Net;
-using System.Reflection;
 using System.Text;
 
 //A simple C# class to post messages to a Slack channel
