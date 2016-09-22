@@ -83,6 +83,7 @@ namespace SlackIntegrations
         public enum colors
         {
             Red,
+            Orange,
             Yellow,
             Green,
             LightBlue,
@@ -101,6 +102,9 @@ namespace SlackIntegrations
             {
                 case colors.Red:
                     output = "#FF0000";
+                    return output;
+                case colors.Orange:
+                    output = "#FF9900";
                     return output;
                 case colors.Yellow:
                     output = "#FFFF00";
