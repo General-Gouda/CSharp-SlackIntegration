@@ -15,7 +15,7 @@ namespace SlackIntegrations
             client.PostMessage(
                 username: "Boaty McBoaterson",
                 text: dateTime + "\nThis is a test message generated in C#!",
-                color: SlackColors.slackColors(SlackColors.colors.Red),
+                color: SlackColors.Set_SlackColor(SlackColors.Colors.Red),
                 pretext: "Testing!"
             );
         }

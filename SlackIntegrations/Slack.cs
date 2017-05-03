@@ -80,7 +80,7 @@ namespace SlackIntegrations
 
     public static class SlackColors
     {
-        public enum colors
+        public enum Colors
         {
             Red,
             Orange,
@@ -94,45 +94,32 @@ namespace SlackIntegrations
             DarkGray
         }
 
-        public static string slackColors (colors color)
+        public static string Set_SlackColor (Colors color)
         {
-            string output = null;
-
             switch (color)
             {
-                case colors.Red:
-                    output = "#FF0000";
-                    return output;
-                case colors.Orange:
-                    output = "#FF9900";
-                    return output;
-                case colors.Yellow:
-                    output = "#FFFF00";
-                    return output;
-                case colors.Green:
-                    output = "#00FF00";
-                    return output;
-                case colors.LightBlue:
-                    output = "#00FFFF";
-                    return output;
-                case colors.DarkBlue:
-                    output = "#0000FF";
-                    return output;
-                case colors.Black:
-                    output = "#000000";
-                    return output;
-                case colors.White:
-                    output = "#FFFFFF";
-                    return output;
-                case colors.Gray:
-                    output = "#CCCCCC";
-                    return output;
-                case colors.DarkGray:
-                    output = "#808080";
-                    return output;
+                case Colors.Red:
+                    return "#FF0000";
+                case Colors.Orange:
+                    return "#FF9900";
+                case Colors.Yellow:
+                    return "#FFFF00";
+                case Colors.Green:
+                    return "#00FF00";
+                case Colors.LightBlue:
+                    return "#00FFFF";
+                case Colors.DarkBlue:
+                    return "#0000FF";
+                case Colors.Black:
+                    return "#000000";
+                case Colors.White:
+                    return "#FFFFFF";
+                case Colors.Gray:
+                    return "#CCCCCC";
+                case Colors.DarkGray:
+                    return "#808080";
                 default:
-                    output = null;
-                    return output;
+                    return null;
             }
         }
     }

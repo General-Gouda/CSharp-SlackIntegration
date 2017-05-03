@@ -1,1 +1,2 @@
 C:\Github\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\SlackIntegrations.exe.config
+C:\GitHub\CSharp-SlackIntegration\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\SlackIntegrations.exe.config
