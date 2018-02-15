@@ -8,6 +8,7 @@ This project adds those feature sets.
 
 Requirements:
 Newtonsoft.json package from NuGet. The package is already installed in the project here.
+RestSharp package from NuGet. Also installed.
 
 The Slack.cs includes the code used to create a JSON payload that will be uploaded to the Slack API. A class with some included colors was also input into this file. These are Web Hex Color values for reference. 
 
