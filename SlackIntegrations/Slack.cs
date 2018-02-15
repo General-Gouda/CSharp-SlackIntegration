@@ -103,10 +103,8 @@ namespace SlackIntegrations
         public int ts { get; set; }
     }
 
-    public class SlackMessageWithAttachments
+    public class SlackMessageWithAttachments : SlackMessageNoAttachments
     {
-        public string text { get; set; }
-        public string username { get; set; }
         public List<Attachment> attachments { get; set; }
     }
 
