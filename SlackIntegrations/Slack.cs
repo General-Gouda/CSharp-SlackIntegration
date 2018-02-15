@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Net;
 using System.Text;
-using System.Collections.Specialized;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using RestSharp;
 
 namespace SlackIntegrations
 {
     public class SlackClient
     {
+        private readonly RestClient _restClient;
         private readonly Uri _uri;
         private readonly Encoding _encoding = new UTF8Encoding();
 
         public SlackClient(string urlWithAccessToken)
         {
             _uri = new Uri(urlWithAccessToken);
+            _restClient = new RestClient(_uri.GetLeftPart(UriPartial.Authority));
         }
 
         //Post a message with attachments
@@ -26,7 +27,7 @@ namespace SlackIntegrations
                 username = username
             };
 
-            PostPayload(slackMessage);
+            SendToSlack(slackMessage);
         }
 
         //Post a message with just text and no attachments
@@ -38,40 +39,46 @@ namespace SlackIntegrations
                 username = username
             };
 
-            PostPayload(slackMessage);
+            SendToSlack(slackMessage);
         }
 
-        //Sends the payload (with attachments) to Slack
-        public void PostPayload(SlackMessageWithAttachments payload)
+        //Sends the message with attachments to Slack using RestSharp
+        public bool SendToSlack(SlackMessageWithAttachments payload)
         {
             string payloadJson = JsonConvert.SerializeObject(payload);
 
-            using (WebClient client = new WebClient())
+            var request = new RestRequest(_uri.PathAndQuery, Method.POST);
+
+            request.AddParameter("payload", payloadJson);
+
+            try
             {
-                NameValueCollection data = new NameValueCollection();
-                data["payload"] = payloadJson;
-
-                var response = client.UploadValues(_uri, "POST", data);
-
-                //The response text is usually "ok"
-                string responseText = _encoding.GetString(response);
+                var response = _restClient.Execute(request);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
-        //Sends the payload (without attachments) to Slack
-        public void PostPayload(SlackMessageNoAttachments payload)
+        //Sends the message with no attachments to Slack using RestSharp
+        public bool SendToSlack(SlackMessageNoAttachments payload)
         {
             string payloadJson = JsonConvert.SerializeObject(payload);
 
-            using (WebClient client = new WebClient())
+            var request = new RestRequest(_uri.PathAndQuery, Method.POST);
+
+            request.AddParameter("payload", payloadJson);
+
+            try
             {
-                NameValueCollection data = new NameValueCollection();
-                data["payload"] = payloadJson;
-
-                var response = client.UploadValues(_uri, "POST", data);
-
-                //The response text is usually "ok"
-                string responseText = _encoding.GetString(response);
+                var response = _restClient.Execute(request);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }
