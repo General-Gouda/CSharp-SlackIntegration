@@ -38,7 +38,7 @@ namespace SlackIntegrations
 
             // Serializes and sends out the attachments to Slack through the webhook.
             client.PostMessage(
-                username: "Rapid7 Alerts",
+                username: "Boaty McBoaterson",
                 attachments: slackAttachments
             );
         }
