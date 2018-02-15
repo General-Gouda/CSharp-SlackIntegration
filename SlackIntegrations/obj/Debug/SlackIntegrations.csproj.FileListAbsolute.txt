@@ -1,2 +1,13 @@
 C:\Github\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\SlackIntegrations.exe.config
 C:\GitHub\CSharp-SlackIntegration\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\SlackIntegrations.exe.config
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\SlackIntegrations.exe
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\SlackIntegrations.pdb
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\RestSharp.dll
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\System.ValueTuple.dll
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\Newtonsoft.Json.xml
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\bin\Debug\System.ValueTuple.xml
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\obj\Debug\SlackIntegrations.csprojResolveAssemblyReference.cache
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\obj\Debug\SlackIntegrations.csproj.CoreCompileInputs.cache
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\obj\Debug\SlackIntegrations.exe
+C:\GitHub\CSharp-SlackIntegration\SlackIntegrations\obj\Debug\SlackIntegrations.pdb
