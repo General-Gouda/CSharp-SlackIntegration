@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using RestSharp;
 
 namespace SlackIntegrations
 {
