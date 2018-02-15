@@ -3,3 +3,5 @@
 ################################################################################
 
 /SlackIntegrations/.vs/SlackIntegrations/v15/Server/sqlite3
+/SlackIntegrations/bin/Debug
+/SlackIntegrations/obj/Debug
