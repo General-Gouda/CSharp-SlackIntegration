@@ -5,16 +5,16 @@ namespace SlackIntegrations
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string urlWithAccessToken = "https://hooks.slack.com/services/{webhook information from Slack API}";
 
-            SlackClient client = new SlackClient(urlWithAccessToken);
+            SlackClient<string> slackClient = new SlackClient<string>(urlWithAccessToken);
 
             string dateTime = DateTime.Now.ToString();
 
             // Posts a simple message with no extra formatting sent to Slack through the webhook
-            client.PostMessage(
+            slackClient.PostMessage(
                 username: "Boaty McBoaterson",
                 text: dateTime + "- This is a test message generated in C#!"
             );
@@ -37,8 +37,8 @@ namespace SlackIntegrations
             slackAttachments.Add(attachment);
 
             // Serializes and sends out the attachments to Slack through the webhook.
-            client.PostMessage(
-                username: "Rapid7 Alerts",
+            slackClient.PostMessage(
+                username: "Boaty McBoaterson",
                 attachments: slackAttachments
             );
         }
