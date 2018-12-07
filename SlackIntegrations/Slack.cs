@@ -133,6 +133,13 @@ namespace SlackIntegrations
         public bool @short { get; set; }
     }
 
+    public class Actions
+    {
+        public string text { get; set; }
+        public string type { get; set; }
+        public string url { get; set; }
+    }
+
     public class Attachment
     {
         public string color { get; set; }
@@ -150,6 +157,8 @@ namespace SlackIntegrations
         public string footer { get; set; }
         public string footer_icon { get; set; }
         public int ts { get; set; }
+        public List<Actions> actions { get; set; }
+
     }
 
     public class SlackMessageNoAttachmentsNoChannel
